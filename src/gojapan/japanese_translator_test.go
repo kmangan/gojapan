@@ -7,7 +7,7 @@ import (
 
 func TestTranslate(t *testing.T) {
 	result := translate("happy")
-	assertEquals(t, result, "ハッピー")
+	assertEquals(t, result.japanese, "ハッピー")
 }
 
 func assertEquals(t *testing.T, a interface{}, b interface{}) {
