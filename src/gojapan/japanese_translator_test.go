@@ -11,8 +11,8 @@ func TestTranslateKatakana(t *testing.T) {
 }
 
 func TestTranslateKatakanaTwoWords(t *testing.T) {
-	result := translate("panda box")
-	assertEquals(t, result.japanese, "パンダボックス")
+	result := translate("banana split")
+	assertEquals(t, result.japanese, "バナナスプリット")
 }
 
 func TestTranslateKanji(t *testing.T) {

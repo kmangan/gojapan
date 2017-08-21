@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"encoding/json"
+	"net/url"
 )
 
 const translateUrl = "https://translate.google.co.uk/translate_a/single?client=t&sl=auto&tl=ja&hl=en&dt=at&client=tw-ob&q="
@@ -19,6 +20,8 @@ type translation struct {
 
 // Translate an English string into Japanese
 func translate(s string) (translation) {
+	// URL encode string
+	s = url.PathEscape(s)
 	httpGetResponse := safeHttpGet(translateUrl + s)
 	body, err := ioutil.ReadAll(httpGetResponse.Body)
 	defer httpGetResponse.Body.Close()
