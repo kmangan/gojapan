@@ -25,6 +25,12 @@ func TestTranslateKanjiTwoWords(t *testing.T) {
 	assertEquals(t, result.japanese, "守護天使")
 }
 
+// If Google is unable to translate, we'll just see the input in the response
+func TestTranslationError(t *testing.T) {
+	result := translate("gobledeegook")
+	assertEquals(t, result.japanese, "gobledeegook")
+}
+
 func assertEquals(t *testing.T, a interface{}, b interface{}) {
 	if a == b {
 		return
