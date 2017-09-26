@@ -7,7 +7,7 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	japaneseResult := translate(r.URL.Path[1:])
-	fmt.Fprintf(w, "Translated %s: %s!", r.URL.Path[1:], japaneseResult)
+	fmt.Fprintf(w, "Translated %s: %s!", r.URL.Path[1:], japaneseResult.japanese)
 }
 
 func SetupHttpListener() {
